@@ -1,8 +1,9 @@
 <template>
-  <form class="form">
+  <form class="form" action="#">
     <div class="form_name">
-      <label for="product-name">{{ product_name }}</label>
+      <label class="form_after" for="product-name">{{ product_name }}</label>
       <input
+        required
         id="product-name"
         type="text"
         placeholder="Введите наименование товара"
@@ -15,13 +16,23 @@
     </div>
 
     <div class="form_link">
-      <label for="product-link">{{ product_link }}</label>
-      <input id="product-link" type="text" placeholder="Введите ссылку" />
+      <label class="form_after" for="product-link">{{ product_link }}</label>
+      <input
+        required
+        id="product-link"
+        type="text"
+        placeholder="Введите ссылку"
+      />
     </div>
 
     <div class="form_price">
-      <label for="product-price">{{ product_price }}</label>
-      <input id="product-price" type="text" placeholder="Введите цену" />
+      <label class="form_after" for="product-price">{{ product_price }}</label>
+      <input
+        required
+        id="product-price"
+        type="text"
+        placeholder="Введите цену"
+      />
     </div>
 
     <button class="form_button" type="submit">{{ button }}</button>
@@ -57,10 +68,25 @@ export default {
   &_button {
     width: 284px;
     height: 36px;
-    background: #eeeeee;
+    background-color: #eeeeee;
     border-radius: 10px;
     border: none;
     color: #b4b4b4;
+    cursor: pointer;
+    transition: all 0.05s ease-in-out;
+    &:active {
+      background-color: rgb(204, 204, 204);
+      color: white;
+      transform: scale(1.02);
+    }
+  }
+  &_after::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ff8484;
+    border-radius: 4px;
   }
   & input,
   & textarea {
@@ -72,6 +98,10 @@ export default {
     border-radius: 4px;
     border: none;
     color: #b4b4b4;
+  }
+  & input,
+  & textarea:focus {
+    color: black;
   }
   &_name,
   &_text,

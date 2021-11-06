@@ -23,6 +23,7 @@ export default {
 
 <style lang="scss" scoped>
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   color: #3f3f3f;
@@ -32,9 +33,23 @@ export default {
   box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04),
     0px 6px 10px rgba(0, 0, 0, 0.02);
   border-radius: 4px;
-  transition: transform 0.2s linear;
+  transition: transform 0.2s ease-in-out;
+  cursor: url("../assets/img/cursor.png"), pointer;
+  &:after {
+    content: url("../assets/img/remove.png");
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: -9px;
+    right: -2px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
   &:hover {
-    transform: translateY(-10px);
+    transform: translateY(-7px);
+    &:after {
+      opacity: 1;
+    }
   }
   img {
     margin-bottom: 16px;
@@ -42,11 +57,9 @@ export default {
   &_content {
     padding: 0 16px 24px 16px;
   }
-  &_title {
-    margin-bottom: 16px;
-  }
+  &_title,
   &_text {
-    margin-bottom: 32px;
+    margin-bottom: 16px;
   }
   &_price {
     font-size: 24px;
