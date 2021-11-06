@@ -1,26 +1,46 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="container">
+    <div class="form_wrapper">
+      <add-form />
+    </div>
+    <div class="card_wrapper">
+      <card-item v-for="carditem in carditems" :key="carditem" />
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import AddForm from "@/components/AddForm.vue";
+import CardItem from "@/components/CardItem.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    AddForm,
+    CardItem,
+  },
+  data() {
+    return {
+      carditems: [{}, {}, {}, {}, {}, {}],
+    };
   },
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.container {
+  width: 1376px;
+  margin: 32px auto;
+  display: flex;
+}
+.form_wrapper {
+  width: 25%;
+}
+.card_wrapper {
+  width: 75%;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 </style>
