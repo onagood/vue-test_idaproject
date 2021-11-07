@@ -47,4 +47,9 @@ export default {};
     cursor: pointer;
   }
 }
+@media screen and (max-width: 576px) {
+  .header_wrapper h1 {
+    font-size: 20px;
+  }
+}
 </style>

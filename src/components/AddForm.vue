@@ -66,7 +66,7 @@ export default {
   border-radius: 4px;
   font-size: 10px;
   &_button {
-    width: 284px;
+    width: 100%;
     height: 36px;
     background-color: #eeeeee;
     border-radius: 10px;
@@ -117,6 +117,12 @@ export default {
       resize: none;
       height: 100%;
     }
+  }
+}
+@media screen and (max-width: 1200px) {
+  .form {
+    width: 300px;
+    font-size: 12px;
   }
 }
 </style>

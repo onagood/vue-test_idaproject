@@ -66,4 +66,9 @@ export default {
     font-weight: 600;
   }
 }
+@media screen and (max-width: 1200px) {
+  .card {
+    width: 300px;
+  }
+}
 </style>
