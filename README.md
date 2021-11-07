@@ -1,4 +1,6 @@
 # test-idaproject
+Тестовое задание.
+Можно посмотреть по [ссылке](https://vue-test-idaproject.vercel.app/).
 
 ## Project setup
 ```
